@@ -3,18 +3,39 @@ import ModalComponent from "./modalCreation/App";
 
 
 
+import React, { useState } from "react";
 
-function App() {
+export default function App() {
+  const [open, setOpen] = useState(false);
 
-  
-  
-  return (<>
-<ModalComponent/>
-  </>
+  return (
+    <div style={{ fontFamily: "sans-serif", padding: 20 }}>
+      <button onClick={() => setOpen(true)}>Open modal</button>
+
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,.5)",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ background: "#fff", padding: 20, borderRadius: 8, minWidth: 240 }}
+          >
+            <h3 style={{ marginTop: 0 }}>Modal</h3>
+            <p>Hi! Click outside or the button to close.</p>
+            <button onClick={() => setOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
-export default App;
-
 /* type Nullable<T> =T | null;
 let name: Nullable<number> = 5; */
   // string | null
