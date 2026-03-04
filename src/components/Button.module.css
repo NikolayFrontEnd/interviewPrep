@@ -1,0 +1,40 @@
+.button{
+    display: flex;
+    align-items: center;
+  justify-content: center;
+    background: rgba(255, 119, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 500;
+font-family:  Roboto;
+border-radius: 16px;
+padding: 16px;
+border: none;
+width: 163px;
+height: 56px;
+position: relative;
+cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(255, 136, 33);
+}
+.button:disabled {
+    background-color: rgb(255, 136, 33);
+    cursor: not-allowed;
+}
+.button img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    animation: rotateС 2s infinite linear; 
+}
+
+@keyframes rotateС {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
