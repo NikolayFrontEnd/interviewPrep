@@ -1,9 +1,5 @@
-import ModalComponent from "./modalCreation/App";
 
-
-
-
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function App() {
   const [open, setOpen] = useState(false);
