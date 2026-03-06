@@ -1,37 +1,27 @@
-
-import { useState } from "react";
+import { useRef } from 'react';
 
 export default function App() {
-  const [open, setOpen] = useState(false);
+  const dialogRef = useRef(null);
+
+  const openModal = () => dialogRef.current.showModal();
+  const closeModal = () => dialogRef.current.close();
 
   return (
-    <div style={{ fontFamily: "sans-serif", padding: 20 }}>
-      <button onClick={() => setOpen(true)}>Open modal</button>
+    <div>
+      
+      <dialog ref={dialogRef}>
+        <h2>Hello!</h2>
+        <p>I am a native popup.</p>
+        <button>Agree</button>
+        <button onClick={closeModal}>Close</button>
+      </dialog>
 
-      {open && (
-        <div
-          onClick={() => setOpen(false)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0,0,0,.5)",
-            display: "grid",
-            placeItems: "center",
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{ background: "#fff", padding: 20, borderRadius: 8, minWidth: 240 }}
-          >
-            <h3 style={{ marginTop: 0 }}>Modal</h3>
-            <p>Hi! Click outside or the button to close.</p>
-            <button onClick={() => setOpen(false)}>Close</button>
-          </div>
-        </div>
-      )}
+      <button onClick={openModal}>Open Popup</button>
     </div>
   );
 }
+
+
 /* type Nullable<T> =T | null;
 let name: Nullable<number> = 5; */
   // string | null

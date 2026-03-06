@@ -1,9 +1,8 @@
-function ModalComponent() {
 
-  
-  
+
+function ModalComponent() {
   return (<>
-dd
+
   </>
   );
 }
