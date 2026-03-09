@@ -10,13 +10,13 @@ export default function App() {
     <div>
       
       <dialog ref={dialogRef}>
-        <h2>Hello!</h2>
+        <h2>Helo!</h2>
         <p>I am a native popup.</p>
         <button>Agree</button>
-        <button onClick={closeModal}>Close</button>
+        <button onClick={closeModal}>Clo</button>
       </dialog>
 
-      <button onClick={openModal}>Open Popup</button>
+      <button onClick={openModal}>Open opup</button>
     </div>
   );
 }
