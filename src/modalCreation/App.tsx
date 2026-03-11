@@ -2,7 +2,8 @@
 
 function ModalComponent() {
   return (<>
-
+анерпмп
+<div>анерпмп</div>
   </>
   );
 }
